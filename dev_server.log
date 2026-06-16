@@ -1,0 +1,93 @@
+
+> temp-app@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.1.0 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 1359ms
+ ○ Compiling / ...
+ ✓ Compiled / in 15.2s
+ HEAD / 200 in 4934ms
+ HEAD / 200 in 4476ms
+ HEAD / 200 in 8281ms
+ HEAD / 200 in 9814ms
+ HEAD / 200 in 3331ms
+ HEAD / 200 in 7384ms
+ HEAD / 200 in 6658ms
+ HEAD / 200 in 14205ms
+ HEAD / 200 in 8718ms
+ HEAD / 200 in 7239ms
+ HEAD / 200 in 7021ms
+ HEAD / 200 in 4284ms
+ HEAD / 200 in 12331ms
+ HEAD / 200 in 9597ms
+ HEAD / 200 in 8366ms
+ HEAD / 200 in 6139ms
+ HEAD / 200 in 12683ms
+ HEAD / 200 in 13958ms
+ HEAD / 200 in 9215ms
+ HEAD / 200 in 12260ms
+ HEAD / 200 in 10025ms
+ HEAD / 200 in 8282ms
+ HEAD / 200 in 4819ms
+ HEAD / 200 in 16619ms
+ HEAD / 200 in 16390ms
+ HEAD / 200 in 10904ms
+ HEAD / 200 in 6921ms
+ HEAD / 200 in 8197ms
+ HEAD / 200 in 6221ms
+ HEAD / 200 in 15765ms
+ HEAD / 200 in 4244ms
+ HEAD / 200 in 11556ms
+ HEAD / 200 in 4541ms
+ HEAD / 200 in 5581ms
+ HEAD / 200 in 13377ms
+ HEAD / 200 in 12150ms
+ HEAD / 200 in 6903ms
+ HEAD / 200 in 14704ms
+ HEAD / 200 in 10963ms
+ HEAD / 200 in 15748ms
+ HEAD / 200 in 18741ms
+ HEAD / 200 in 6271ms
+ HEAD / 200 in 16324ms
+ HEAD / 200 in 17344ms
+ HEAD / 200 in 14107ms
+ HEAD / 200 in 10123ms
+ HEAD / 200 in 17932ms
+ HEAD / 200 in 18908ms
+ HEAD / 200 in 12713ms
+ HEAD / 200 in 17755ms
+ HEAD / 200 in 15767ms
+ HEAD / 200 in 15551ms
+ HEAD / 200 in 11819ms
+ HEAD / 200 in 4304ms
+ HEAD / 200 in 14115ms
+ HEAD / 200 in 19106ms
+ HEAD / 200 in 12408ms
+ HEAD / 200 in 18942ms
+ HEAD / 200 in 16966ms
+ HEAD / 200 in 18732ms
+ HEAD / 200 in 19221ms
+ HEAD / 200 in 18538ms
+ HEAD / 200 in 14798ms
+ HEAD / 200 in 4343ms
+ HEAD / 200 in 4043ms
+ GET / 200 in 589ms
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1505751172107-597d5a4d4b9c?auto=format&fit=crop&q=80&w=800 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1551288049-bbbda536ad0a?auto=format&fit=crop&q=80&w=800 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1504868584819-f8e90526ef49?auto=format&fit=crop&q=80&w=800 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1551288049-bbbda536ad0a?auto=format&fit=crop&q=80&w=1200 404
+ ○ Compiling /services ...
+ ✓ Compiled /services in 1860ms
+ GET /services 200 in 2070ms
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1551288049-bbbda536ad0a?auto=format&fit=crop&q=80&w=800 404
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 1354ms
+ GET /contact 200 in 1613ms
+ ✓ Compiled in 146ms
+ ✓ Compiled in 70ms
+ ✓ Compiled in 3.7s
+ ✓ Compiled in 18ms
