@@ -108,3 +108,54 @@ export interface SEOConfig {
   keywords: string[];
   ogImage: string;
 }
+
+export interface FeatureShowcaseItem {
+  title: string;
+  description: string;
+  image: string;
+  color: string;
+}
+
+export interface ComparisonRow {
+  label: string;
+  pixora: string | boolean;
+  agency: string | boolean;
+  freelancer: string | boolean;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image: string;
+}
+
+export interface FinalCTAContent {
+  headline: string;
+  description: string;
+  primaryCTA: CTA;
+  trustIndicators: string[];
+}
+
+export interface Stat {
+  label: string;
+  value: number;
+  suffix: string;
+}
+
+export interface AboutContent {
+  headline: string;
+  description: string;
+  founder: {
+    name: string;
+    story: string[];
+    image: string;
+  };
+  values: {
+    title: string;
+    desc: string;
+  }[];
+}

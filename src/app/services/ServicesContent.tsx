@@ -3,7 +3,7 @@
 import { services } from "@/content/services";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/shared/RevealText";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import * as LucideIcons from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -33,10 +33,10 @@ export default function ServicesContent() {
                 id={service.slug}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center scroll-mt-32"
               >
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2 }}
                 >
                   <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-8">
                     <Icon size={32} />
@@ -80,12 +80,12 @@ export default function ServicesContent() {
                       </Link>
                     </MagneticButton>
                   </div>
-                </motion.div>
+                </m.div>
 
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2 }}
                   className="relative h-[400px] lg:h-[500px] bg-surface border border-border rounded-3xl overflow-hidden"
                 >
                   <Image
@@ -94,7 +94,7 @@ export default function ServicesContent() {
                     fill
                     className="object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700"
                   />
-                </motion.div>
+                </m.div>
               </section>
             );
           })}

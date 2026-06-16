@@ -8,9 +8,15 @@ import RevealText from "@/components/shared/RevealText";
 import { contactInfo } from "@/content/contact";
 import { industries } from "@/content/industries";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Loader2, Mail, Phone, MapPin, Send } from "lucide-react";
 import MagneticButton from "@/components/shared/MagneticButton";
+import dynamic from "next/dynamic";
+
+const ContactMap = dynamic(() => import("@/components/sections/ContactMap"), {
+  ssr: false,
+  loading: () => <div className="w-full h-[400px] animate-pulse bg-surface/50 rounded-3xl" />
+});
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is too short"),
@@ -25,7 +31,7 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-export default function ContactPage() {
+export default function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -120,7 +126,7 @@ export default function ContactPage() {
           <div className="relative">
             <AnimatePresence mode="wait">
               {isSuccess ? (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-accent/5 border border-accent/20 rounded-[40px] p-12 text-center h-full flex flex-col items-center justify-center"
@@ -131,9 +137,9 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-display font-bold mb-4">Message Sent!</h2>
                   <p className="text-text-2 mb-8">Thank you for reaching out. We&apos;ll be in touch with you shortly to confirm your consultation.</p>
                   <button onClick={() => setIsSuccess(false)} className="text-accent font-bold hover:underline">Send another message</button>
-                </motion.div>
+                </m.div>
               ) : (
-                <motion.form
+                <m.form
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
@@ -237,10 +243,14 @@ export default function ContactPage() {
                       {isSubmitting ? <Loader2 className="animate-spin" /> : "Send Message"}
                     </button>
                   </MagneticButton>
-                </motion.form>
+                </m.form>
               )}
             </AnimatePresence>
           </div>
+        </div>
+
+        <div className="mt-20">
+          <ContactMap />
         </div>
       </div>
     </div>

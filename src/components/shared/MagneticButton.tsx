@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { m, useSpring } from 'framer-motion';
 import { cn } from "@/lib/utils";
 
 interface MagneticButtonProps {
@@ -37,7 +37,7 @@ export default function MagneticButton({
   const y = useSpring(position.y, { stiffness: 150, damping: 15 });
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -46,6 +46,6 @@ export default function MagneticButton({
       onClick={onClick}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

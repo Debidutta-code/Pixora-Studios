@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface GlowOrbProps {
@@ -21,7 +21,7 @@ export default function GlowOrb({
   const isReducedMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ scale: 1, opacity: 0.3 }}
       animate={isReducedMotion ? {} : {

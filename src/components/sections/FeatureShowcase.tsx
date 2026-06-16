@@ -1,31 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { m, useScroll, useTransform, MotionValue } from 'framer-motion';
 import SectionLabel from "@/components/shared/SectionLabel";
 import Link from "next/link";
 import Image from "next/image";
-
-const features = [
-  {
-    title: "CRM Dashboard",
-    description: "Manage your leads and customers with a high-performance dashboard designed for clarity.",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda536ad0a?auto=format&fit=crop&q=80&w=800",
-    color: "bg-blue-500/20"
-  },
-  {
-    title: "Appointment System",
-    description: "Seamless booking flow that integrates directly with your business calendar.",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e90526ef49?auto=format&fit=crop&q=80&w=800",
-    color: "bg-purple-500/20"
-  },
-  {
-    title: "Restaurant POS",
-    description: "Lightning-fast point of sale that keeps your kitchen and dining room in sync.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
-    color: "bg-orange-500/20"
-  }
-];
+import { featureShowcase } from "@/content/featureShowcase";
+import { FeatureShowcaseItem } from "@/types";
 
 function FeatureText({
   feature,
@@ -33,7 +14,7 @@ function FeatureText({
   scrollYProgress,
   total
 }: {
-  feature: typeof features[0],
+  feature: FeatureShowcaseItem,
   index: number,
   scrollYProgress: MotionValue<number>,
   total: number
@@ -50,7 +31,7 @@ function FeatureText({
   );
 
   return (
-    <motion.div
+    <m.div
       style={{ opacity, y }}
       className="absolute inset-0 flex flex-col justify-center"
     >
@@ -66,7 +47,7 @@ function FeatureText({
       >
         See how it works →
       </Link>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -76,7 +57,7 @@ function FeatureVisual({
   scrollYProgress,
   total
 }: {
-  feature: typeof features[0],
+  feature: FeatureShowcaseItem,
   index: number,
   scrollYProgress: MotionValue<number>,
   total: number
@@ -93,7 +74,7 @@ function FeatureVisual({
   );
 
   return (
-    <motion.div
+    <m.div
       style={{ opacity, scale }}
       className={`absolute inset-0 ${feature.color} flex items-center justify-center`}
     >
@@ -106,7 +87,7 @@ function FeatureVisual({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40" />
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -124,26 +105,26 @@ export default function FeatureShowcase() {
           <div>
             <SectionLabel>Capabilities</SectionLabel>
             <div className="relative h-[300px]">
-              {features.map((feature, i) => (
+              {featureShowcase.map((feature, i) => (
                 <FeatureText
                   key={i}
                   feature={feature}
                   index={i}
                   scrollYProgress={scrollYProgress}
-                  total={features.length}
+                  total={featureShowcase.length}
                 />
               ))}
             </div>
           </div>
 
           <div className="relative h-[500px] w-full rounded-3xl overflow-hidden bg-surface border border-border">
-             {features.map((feature, i) => (
+             {featureShowcase.map((feature, i) => (
                 <FeatureVisual
                   key={i}
                   feature={feature}
                   index={i}
                   scrollYProgress={scrollYProgress}
-                  total={features.length}
+                  total={featureShowcase.length}
                 />
               ))}
           </div>

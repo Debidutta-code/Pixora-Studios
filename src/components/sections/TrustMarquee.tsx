@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import { clients } from "@/content/clients";
 
 export default function TrustMarquee() {
@@ -8,7 +8,7 @@ export default function TrustMarquee() {
     <section className="py-20 bg-background overflow-hidden border-y border-border">
       <div className="flex flex-col gap-12">
         <div className="flex overflow-hidden">
-          <motion.div
+          <m.div
             animate={{ x: [0, -1000] }}
             transition={{
               duration: 20,
@@ -25,11 +25,11 @@ export default function TrustMarquee() {
                 {client.name.toUpperCase()}
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="flex overflow-hidden">
-          <motion.div
+          <m.div
             animate={{ x: [-1000, 0] }}
             transition={{
               duration: 25,
@@ -46,7 +46,7 @@ export default function TrustMarquee() {
                 {client.name.toUpperCase()}
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

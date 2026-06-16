@@ -4,7 +4,7 @@ import { portfolio } from "@/content/portfolio";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/shared/RevealText";
 import AnimatedCounter from "@/components/shared/AnimatedCounter";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -19,11 +19,11 @@ export default function CaseStudies() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {portfolio.map((item, index) => (
-            <motion.div
+            <m.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               className="group bg-surface border border-border rounded-3xl overflow-hidden"
             >
@@ -58,7 +58,7 @@ export default function CaseStudies() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

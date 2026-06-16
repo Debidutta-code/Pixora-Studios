@@ -5,12 +5,26 @@ import { testimonials } from "@/content/testimonials";
 import SectionLabel from "@/components/shared/SectionLabel";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useCallback } from "react";
 
 export default function Testimonials() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    skipSnaps: false,
+  });
 
-  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
-  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") scrollPrev();
+      if (e.key === "ArrowRight") scrollNext();
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [scrollPrev, scrollNext]);
 
   return (
     <section className="py-32 px-6 bg-surface overflow-hidden">
@@ -38,7 +52,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="embla" ref={emblaRef}>
+        <div className="embla" ref={emblaRef} tabIndex={0} aria-label="Client Testimonials">
           <div className="embla__container flex">
             {testimonials.map((t) => (
               <div key={t.id} className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_40%] px-4">

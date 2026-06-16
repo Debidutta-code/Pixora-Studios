@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { heroContent } from "@/content/hero";
 import MagneticButton from "@/components/shared/MagneticButton";
@@ -34,7 +34,7 @@ export default function Hero() {
       <GlowOrb className="bottom-[10%] right-[10%]" color1="#00D4FF" color2="#6C63FF" delay={2} />
 
       <div className="max-w-5xl mx-auto px-6 text-center z-10">
-        <motion.div
+        <m.div
           initial="hidden"
           animate="visible"
           className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-surface/50 border border-border mb-8"
@@ -47,11 +47,11 @@ export default function Hero() {
           <span className="text-xs font-mono uppercase tracking-wider text-text-2">
             Trusted by 50+ businesses
           </span>
-        </motion.div>
+        </m.div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.1] mb-8">
           {letters.map((char, i) => (
-            <motion.span
+            <m.span
               key={i}
               initial={isReducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,20 +63,20 @@ export default function Hero() {
               className="inline-block whitespace-pre"
             >
               {char}
-            </motion.span>
+            </m.span>
           ))}
         </h1>
 
-        <motion.p
+        <m.p
           initial={isReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
           className="text-lg md:text-xl text-text-2 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           {heroContent.subheadline}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={isReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
@@ -95,24 +95,24 @@ export default function Hero() {
             className="text-text-1 font-bold flex items-center group"
           >
             {heroContent.secondaryCTA.label}
-            <motion.span
+            <m.span
               animate={{ x: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
               className="ml-2"
             >
               →
-            </motion.span>
+            </m.span>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
 
-      <motion.div
+      <m.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-3"
       >
         <ChevronDown size={32} />
-      </motion.div>
+      </m.div>
     </section>
   );
 }

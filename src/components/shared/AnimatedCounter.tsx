@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { animate } from "framer-motion";
+import { animate } from 'framer-motion';
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export default function AnimatedCounter({

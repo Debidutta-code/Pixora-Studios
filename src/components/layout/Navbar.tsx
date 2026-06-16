@@ -5,7 +5,7 @@ import Link from "next/link";
 import { navigationLinks } from "@/content/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,7 +67,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -90,7 +90,7 @@ export default function Navbar() {
             >
               Get Free Demo
             </Link>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

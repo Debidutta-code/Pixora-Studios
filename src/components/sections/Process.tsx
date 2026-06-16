@@ -2,7 +2,7 @@
 
 import { processSteps } from "@/content/process";
 import SectionLabel from "@/components/shared/SectionLabel";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { m, useScroll, useSpring } from 'framer-motion';
 import { useRef } from "react";
 
 export default function Process() {
@@ -29,18 +29,18 @@ export default function Process() {
         <div className="relative">
           {/* Vertical Line for Mobile */}
           <div className="absolute left-4 top-0 bottom-0 w-px bg-border md:left-1/2" />
-          <motion.div
+          <m.div
             className="absolute left-4 top-0 bottom-0 w-px bg-accent md:left-1/2 origin-top z-10"
             style={{ scaleY }}
           />
 
           <div className="space-y-24">
             {processSteps.map((step, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.2 }}
                 className={`relative flex flex-col md:flex-row items-center gap-12 ${
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
@@ -57,7 +57,7 @@ export default function Process() {
                   </p>
                 </div>
                 <div className="hidden md:block md:w-1/2" />
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

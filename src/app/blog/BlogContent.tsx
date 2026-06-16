@@ -2,30 +2,10 @@
 
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/shared/RevealText";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Link from "next/link";
 import Image from "next/image";
-
-const blogPosts = [
-  {
-    slug: "modernizing-dental-clinics",
-    title: "How Modern Software is Changing Dental Practices",
-    excerpt: "Discover the impact of custom CRM and automated scheduling on patient retention and clinic efficiency.",
-    category: "Healthcare",
-    date: "Dec 15, 2024",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    slug: "restaurant-tech-trends-2025",
-    title: "Restaurant Tech Trends to Watch in 2025",
-    excerpt: "From AI-powered inventory to contactless dining, explore the future of restaurant management.",
-    category: "Restaurants",
-    date: "Dec 10, 2024",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=800"
-  }
-];
+import { blogPosts } from "@/content/blog";
 
 export default function BlogPage() {
   return (
@@ -43,11 +23,11 @@ export default function BlogPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
-            <motion.div
+            <m.div
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               className="group bg-surface border border-border rounded-3xl overflow-hidden hover:border-accent transition-colors"
             >
@@ -71,7 +51,7 @@ export default function BlogPage() {
                   Read Article <span>→</span>
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

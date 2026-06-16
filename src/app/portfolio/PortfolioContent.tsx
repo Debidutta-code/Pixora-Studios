@@ -4,7 +4,7 @@ import { useState } from "react";
 import { portfolio } from "@/content/portfolio";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/shared/RevealText";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from "@/components/shared/AnimatedCounter";
 import Image from "next/image";
 
@@ -43,10 +43,10 @@ export default function PortfolioContent() {
           </div>
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <m.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
-              <motion.div
+              <m.div
                 key={item.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -96,10 +96,10 @@ export default function PortfolioContent() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

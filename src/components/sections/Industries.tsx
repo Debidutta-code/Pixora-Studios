@@ -3,7 +3,7 @@
 import { industries } from "@/content/industries";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/shared/RevealText";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -18,11 +18,11 @@ export default function Industries() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
-            <motion.div
+            <m.div
               key={industry.id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               className="group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer"
             >
@@ -44,7 +44,7 @@ export default function Industries() {
                   </p>
                 </div>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

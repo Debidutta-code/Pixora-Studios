@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export default function RevealText({
@@ -21,10 +21,10 @@ export default function RevealText({
     <span className="inline-block">
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden mr-[0.25em]">
-          <motion.span
+          <m.span
             initial={{ y: "100%" }}
             whileInView={{ y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{
               duration: 0.8,
               delay: delay + i * staggerDelay,
@@ -33,7 +33,7 @@ export default function RevealText({
             className="inline-block"
           >
             {word}
-          </motion.span>
+          </m.span>
         </span>
       ))}
     </span>

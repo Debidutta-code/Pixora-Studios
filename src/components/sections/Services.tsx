@@ -3,7 +3,7 @@
 import { services } from "@/content/services";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/shared/RevealText";
-import { motion } from "framer-motion";
+import { m } from 'framer-motion';
 import * as LucideIcons from "lucide-react";
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
@@ -21,11 +21,11 @@ export default function Services() {
           {services.map((service, index) => {
             const Icon = (LucideIcons as unknown as Record<string, LucideIcon>)[service.icon] || LucideIcons.Globe;
             return (
-              <motion.div
+              <m.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: index * 0.05 }}
               >
                 <Link
@@ -43,7 +43,7 @@ export default function Services() {
                     </p>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { contactInfo } from "@/content/contact";
+import FramerProvider from "@/components/shared/FramerProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -79,7 +80,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        <main>{children}</main>
+        <FramerProvider>
+          <main>{children}</main>
+        </FramerProvider>
         <Footer />
       </body>
     </html>
